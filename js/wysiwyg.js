@@ -34,6 +34,8 @@ function addBackground(){
 	}
 }
 
+//Give an alert if there's no card selected
+
 function dottedBorder(){
 	var getAllCards = document.getElementsByClassName("allcards");
 	var input = document.getElementById("input");
@@ -53,18 +55,22 @@ function mirrorText(currentCard){
 	input.addEventListener("keyup", function(){
 			if (currentCard.classList.contains("border")) {
 				currentCard.querySelector("p").innerHTML = input.value; 
-				clearText();
 			}
+
+		clearText(currentCard);
 	})
 }
 
-function clearText(){
+function clearText(currentCard){
 	var input = document.getElementById("input");
+
 	input.addEventListener("keydown", function(event){
 		if (event.keyCode === 13) {
+			currentCard.classList.remove("border");
 			input.value = "";
 		}
 	})
 }
 
 getPeople(); //Calls getPeople to load the peeps.
+
