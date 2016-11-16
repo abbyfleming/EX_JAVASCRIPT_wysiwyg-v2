@@ -1,0 +1,16 @@
+.yellow {
+	background: lightyellow;
+}
+
+
+.blue {
+	background: lightblue;
+}
+
+.border {
+	border: 2px solid black;
+}
+
+img {
+	max-width: 20%;
+}
